@@ -75,6 +75,43 @@ Install my-project with npm
 ```
 <p>&nbsp;</p>
 
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Dumbledore-on-Strive/goodreads
+```
+
+Go to the project directory
+
+```bash
+  cd goodreads
+```
+
+Install dependencies
+
+```bash
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  from bs4 import BeautifulSoup
+  import urllib.request
+  import requests
+  import re
+  import csv
+  import html
+```
+
+Start the server
+
+```bash
+  python3 main.py
+```
+
+<p>&nbsp;</p>  
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
