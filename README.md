@@ -73,3 +73,27 @@ Install my-project with npm
   npm install book_to_movie
   cd book_to_movie
 ```
+<p>&nbsp;</p>
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+<p>&nbsp;</p>
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+
+<p>&nbsp;</p>
+
+
+## Support
+
+For support, email goodreads@dumbledore.ai or join our Slack channel.
+
+<p>&nbsp;</p>
