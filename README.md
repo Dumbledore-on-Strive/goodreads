@@ -1,6 +1,6 @@
 # Strive School Build Week 1
 ## Goodreads Project
-#
+
 
 ![](https://miro.medium.com/max/1200/1*enOrjdaY-Zx9hpSKqx61Kg.jpeg)
 
@@ -12,7 +12,7 @@ print('Hello World')
 <p>&nbsp;</p>
 
 ## AI Build Week 1 - Dumbledore Team
-#
+
 During the first build week on Strive School, our task is to work as a team and to have the opportunity to put together what you have learned so far and build something for real.
 
 All instructions were posted on [Notion.](https://www.notion.so/Data-Visualization-e226cc8314324939a56ac84a1f457cbd)
@@ -20,7 +20,7 @@ All instructions were posted on [Notion.](https://www.notion.so/Data-Visualizati
 <p>&nbsp;</p>
 
 ## The Team 
-#
+
 * [Agathyia Raja](https://github.com/AgathiyaRaja)
 * [Camelia Ignat](https://github.com/avocami)
 * [Fabio Fistarol](https://github.com/fistadev)
@@ -29,7 +29,7 @@ All instructions were posted on [Notion.](https://www.notion.so/Data-Visualizati
 <p>&nbsp;</p>
 
 ## The Task 
-#
+
 Create your own database with the scraped information from [goodreads.com](https://www.goodreads.com/), to process and analyse them, also with a bit of Data Visualization and finally make the result public! 
 
 <p>&nbsp;</p>
