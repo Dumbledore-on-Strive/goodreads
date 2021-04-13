@@ -15,7 +15,7 @@ print('Hello World')
 
 During the first build week on Strive School, our task is to work as a team and to have the opportunity to put together what you have learned so far and build something for real.
 
-All instructions were posted on [Notion.](https://www.notion.so/Data-Visualization-e226cc8314324939a56ac84a1f457cbd)
+All instructions were posted on [Notion.](https://www.notion.so/AI-Build-Week-Outline-5f34e5625b044d929a3d8ebd10b1881f)
 
 <p>&nbsp;</p>
 
