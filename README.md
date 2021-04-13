@@ -60,5 +60,16 @@ Data to be scrape.
 
 * [Publish](https://www.notion.so/Publish-98a388d301ff490fa0fcda40deef3a3b)
 
+
 * [Present](https://www.notion.so/Present-641432ba3db74b47b063d8b7b0a93e03)
 
+<p>&nbsp;</p>
+
+## Installation 
+
+Install my-project with npm
+
+```bash 
+  npm install book_to_movie
+  cd book_to_movie
+```
