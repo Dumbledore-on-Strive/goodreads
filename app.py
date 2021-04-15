@@ -4,6 +4,7 @@ import matplotlib as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
+import altair as alt
 
 
 st.title("  Dumblodere Team  ")
@@ -57,12 +58,34 @@ def main():
             #     st.write(number_list/10, "%")
             # st.text(
             #     " we extract data from website with  95 percentage  effciency  ")
-            st.markdown(
-                "![Alt Text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F488429522089487391%2F&psig=AOvVaw1YzKU4EaP0Wi_qxD2dOk6I&ust=1618612815182000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjoueKogfACFQAAAAAdAAAAABAT)")
+
     elif choice == "Data Processing":
         st.subheader("Data Processing")
     else:
         st.subheader("Data Visualisation")
+        df = pd.read_csv("preprocess_data.csv")
+        st.write(df.head(10))
+        # graph bar chart mean
+        tmp = df.groupby("original_publish_year")[
+            "award"].mean().sort_values()
+        st.bar_chart(tmp)
+
+        tmp = df.groupby("original_publish_year")[
+            "award"].max().sort_values()
+        st.bar_chart(tmp)
+
+        st.subheader(
+            "Avarage rating vs Number of Pages\n   The biggest has more  avards")
+        size_b = df['award']**3 + 20
+        colors = np.random.rand(df.shape[0])
+        sns.scatterplot(df['num_pages'], df['num_rating'],
+                        s=size_b, c=colors, alpha=0.7, legend=True, label="the biggest get most  award")
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot()
+
+        st.subheader("Min-Max Normalization Distrubtion")
+
+        st.subheader("Mean Normalization Distrubtion")
 
 
 main()
