@@ -50,6 +50,8 @@ def main():
             st.header("1000 books data frame from scrapper")
             book_data = pd.read_csv('preprocess_data.csv')
             st.write(book_data.head(10))
+            number_list = pd.book_data.shape[0]
+            st.success("Efficiency of data  Scrapping ")
 
     elif choice == "Data Processing":
         st.subheader("Data Processing")
