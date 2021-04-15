@@ -57,8 +57,8 @@ def main():
             #     st.write(number_list/10, "%")
             # st.text(
             #     " we extract data from website with  95 percentage  effciency  ")
-            image = Image.open('cartoon.png')
-            st.image(image, caption='Dumbledore')
+            st.markdown(
+                "![Alt Text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F488429522089487391%2F&psig=AOvVaw1YzKU4EaP0Wi_qxD2dOk6I&ust=1618612815182000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjoueKogfACFQAAAAAdAAAAABAT)")
     elif choice == "Data Processing":
         st.subheader("Data Processing")
     else:
