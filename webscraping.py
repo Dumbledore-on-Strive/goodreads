@@ -1,4 +1,5 @@
 from libraries import *
+from libraries import *
 
 
 def scraper(book):
