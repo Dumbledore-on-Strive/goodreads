@@ -84,15 +84,12 @@ def main():
         st.pyplot()
 
         st.subheader("Min-Max Normalization Distrubtion")
-
+############################################################################################################
         st.subheader("Mean Normalization Distrubtion")
         sns.displot(df, x="mean_norm_ratings", kde=True, fill=True)
         sns.color_palette("Spectral", as_cmap=True)
-        plt.xlabel("Mean normalization Range")
-        plt.ylabel("Frequency")
-        plt.grid()
-        plt.title('Distribution of minmax_norm_ratings', color='r')
         st.pyplot()
+###########################################################################################################
 
 
 main()
