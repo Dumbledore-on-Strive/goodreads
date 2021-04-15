@@ -39,3 +39,4 @@ def scraper(book):
     places = soup_test_2.find_all("a", class_="infoBoxRowItem")
     for place in places:
         print(place)
+
