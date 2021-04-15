@@ -48,7 +48,7 @@ def main():
         dataset = st.beta_container()
         with dataset:
             st.header("1000 books data frame from scrapper")
-            book_data = pd.read_csv('data/preprocess_data.csv')
+            book_data = pd.read_csv('preprocess_data.csv')
             st.write(book_data.head(10))
 
     elif choice == "Data Processing":
