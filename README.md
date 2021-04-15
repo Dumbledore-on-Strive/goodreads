@@ -8,7 +8,6 @@
 __init__
 print('Hello World')
 ```
-  
 <p>&nbsp;</p>
 
 ## AI Build Week 1 - Dumbledore Team
