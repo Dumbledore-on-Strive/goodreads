@@ -32,17 +32,7 @@ def main():
         to_do3 = st.checkbox("Data Prosessing")
         to_do4 = st.checkbox("Data Visualization")
         to_do5 = st.checkbox("about dumbloder")
-        # if to_do1:
-        #     st.checkbox(value=True)
-        # if to_do2:
-        #     st.checkbox(value=True)
-        # if to_do3:
-        #     st.checkbox(value=True)
-        # if to_do4:
-        #     st.checkbox(value=True)
-        # if to_do5:
-        #     st.checkbox(value=True)
-        image = Image.open('cartoon.png')
+        image = Image.open('data/cartoon.png')
         st.image(image, caption='Dumbledore')
         st.success("Scrapping 1000 books details from www.goodreads.com")
         st.button("Project Github timeline ")
@@ -54,6 +44,11 @@ def main():
             st.checkbox("Great", value=True)
     elif choice == "Data Scrapping":
         st.subheader("Data Processing")
+        header = st.beta_container()
+        dataset = st.beta_container()
+        with dataset:
+            st.header("1000 books data frame from scrapper")
+            book_data = pd.read_csv('data/preprocess_data.csv')
 
     elif choice == "Data Processing":
         st.subheader("Data Processing")
