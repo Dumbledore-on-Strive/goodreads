@@ -48,13 +48,15 @@ def main():
         dataset = st.beta_container()
         with dataset:
             st.header("1000 books data frame from scrapper")
-            book_data = pd.read_csv('preprocess_data.csv')
+            book_data = pd.read_csv('goodreads_1000_books_list.csv')
             st.write(book_data.head(10))
             number_list = book_data.shape[0]
-            st.success("Efficiency of data  Scrapping ")
+            st.success("Efficiency percentage of data  Scrapping ")
             eff_sc = st.button("Show Answer :sunglasses: ", key="1")
             if eff_sc:
-                st.write(number_list/10)
+                st.write(number_list/10, "%")
+            st.text(
+                " we extract data from website with  95 percentage  effciency  ")
     elif choice == "Data Processing":
         st.subheader("Data Processing")
     else:
