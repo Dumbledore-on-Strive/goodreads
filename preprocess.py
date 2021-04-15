@@ -4,31 +4,27 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 
+def minmax_norm(data_column_name):
+    x = data_column_name
+    mean_norm_ratings = 1+((x-x.min())/(x.max()-x.min()))*9
+    return mean_norm_ratings
+
+
+# Mean normalization
+def mean_norm(data_column_name):
+    x = data_column_name
+    mean_norm_ratings = 1+((x-x.mean())/(x.max()-x.min()))*9
+    return mean_norm_ratings
+
+
 def preprocess():
 
     df = pd.read_csv("goodreads_1000_books_list.csv")
     df = df.drop(['Unnamed: 0', 'place', 'url'], axis=1)
     df['num_pages'] = pd.to_numeric(df['num_pages'], downcast='integer')
 
-    def minmax_norm(data_column_name):
-        x = data_column_name
-        mean_norm_ratings = 1+((x-x.min())/(x.max()-x.min()))*9
-        return mean_norm_ratings
-
     df['minmax_norm_ratings'] = minmax_norm(
         df['avg_rating']).round(decimals=2)  # little problem
-
-    df.head()
-
-    # # Mean normalization
-    #Step1 : average (avg_rating)
-    df_mean = df[["avg_rating"]].mean()
-    df_mean
-
-    def mean_norm(data_column_name):
-        x = data_column_name
-        mean_norm_ratings = 1+((x-x.mean())/(x.max()-x.min()))*9
-        return mean_norm_ratings
 
     a = mean_norm(df["avg_rating"])
     a.to_frame()
