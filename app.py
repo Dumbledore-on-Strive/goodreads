@@ -32,7 +32,7 @@ def main():
         to_do3 = st.checkbox("Data Prosessing")
         to_do4 = st.checkbox("Data Visualization")
         to_do5 = st.checkbox("about dumbloder")
-        image = Image.open('data/cartoon.png')
+        image = Image.open('cartoon.png')
         st.image(image, caption='Dumbledore')
         st.success("Scrapping 1000 books details from www.goodreads.com")
         st.button("Project Github timeline ")
@@ -49,6 +49,7 @@ def main():
         with dataset:
             st.header("1000 books data frame from scrapper")
             book_data = pd.read_csv('data/preprocess_data.csv')
+            st.write(book_data.head(10))
 
     elif choice == "Data Processing":
         st.subheader("Data Processing")
