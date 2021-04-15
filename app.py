@@ -52,7 +52,9 @@ def main():
             st.write(book_data.head(10))
             number_list = pd.book_data.shape[0]
             st.success("Efficiency of data  Scrapping ")
-
+            st.button("Show Answer :sunglasses: ")
+            if st.button():
+                st.write(number_list/10)
     elif choice == "Data Processing":
         st.subheader("Data Processing")
     else:
