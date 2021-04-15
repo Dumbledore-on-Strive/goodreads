@@ -34,12 +34,7 @@ def preprocess():
     cols = df.columns.tolist()
     cols = cols[:8]+cols[-2:]+cols[8:-2]
     df = df[cols]
-    df
-
     df.to_csv('preprocess_data.csv')
-
-    # #                                                                            Analyse
-
     anay_goup = df.groupby("original_publish_year")[
         'minmax_norm_ratings'].mean().round(decimals=2)
 
@@ -50,8 +45,6 @@ def preprocess():
     # In[61]:
 
     anay_goup.to_frame()
-
-    # #                                         The Best Book Author
 
     def get_book_author(name, df):
         f = df[df.loc[:, 'author'] == name]
