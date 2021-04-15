@@ -1,6 +1,8 @@
-import yfinance as yf
 import streamlit as st
 import pandas as pd
+import matplotlib as plt
+import seaborn as sns
+import numpy as np
 st.write(""" 
 
 # simple Stock Price App
@@ -8,11 +10,3 @@ st.write("""
 Shown are the stock closing price and volume of Google 
 
 """)
-tickerSymbol = 'AAPL'
-tickerData = yf.Ticker(tickerSymbol)
-
-tickerDf = tickerData.history(period='id', start='2010-5-31', end='2020-4-15')
-
-
-st.line_chart(tickerDf.Close)
-st.line_chart(tickerDf.Volume)
