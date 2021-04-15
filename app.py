@@ -52,8 +52,8 @@ def main():
             st.write(book_data.head(10))
             number_list = book_data.shape[0]
             st.success("Efficiency of data  Scrapping ")
-            st.button("Show Answer :sunglasses: ")
-            if st.button("Show Answer :sunglasses: "):
+            eff_sc = st.button("Show Answer :sunglasses: ", key="1")
+            if eff_sc:
                 st.write(number_list/10)
     elif choice == "Data Processing":
         st.subheader("Data Processing")
