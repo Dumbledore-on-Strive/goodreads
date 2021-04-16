@@ -271,19 +271,19 @@ def main():
                         label='The best author who has more awards')
 
         # agg_bar_graph
-        def agg_bar_graph(df):
-            st.markdown("")
-            st.markdown("")
-            st.subheader("Comparison between Awards and Year")
-            st.markdown("")
-            st.markdown("")
-            df.groupby('original_publish_year')['award'].agg('max', 'mean').plot(
-                kind='bar', color=['r', 'pink'], legend='', figsize=(25, 5))
-            plt.legend(loc='best')
-            plt.xlabel("original_publish_year ")
-            plt.ylabel("Total awards")
-            plt.title("Aggregation plot for awards")
-            plt.show()
+        # def agg_bar_graph(df):
+        #     st.markdown("")
+        #     st.markdown("")
+        #     st.subheader("Comparison between Awards and Year")
+        #     st.markdown("")
+        #     st.markdown("")
+        #     df.groupby('original_publish_year')['award'].agg('max', 'mean').plot(
+        #         kind='bar', color=['r', 'pink'], legend='', figsize=(25, 5))
+        #     plt.legend(loc='best')
+        #     plt.xlabel("original_publish_year ")
+        #     plt.ylabel("Total awards")
+        #     plt.title("Aggregation plot for awards")
+        #     plt.show()
 
         ######
         st.sidebar.markdown("Which Type of Graph do want?")
