@@ -134,8 +134,6 @@ def main():
             data = load_data("clean")
 
             def scatter_2D_plot(data):
-                # fig, ax = plt.subplots()
-                # ax.scatter([1, 2, 3], [1, 2, 3])
                 size_b = data['award']**2*12
                 colors = np.random.rand(data.shape[0])
                 sns.scatterplot(data['num_pages'], data['num_rating'],
@@ -162,15 +160,7 @@ def main():
 
 ###########################################################
         st.subheader(
-            "Avarage rating vs Number of Pages\n   The biggest has more  avards")
-
-        # colors = np.random.rand(data.shape[0])
-        # sns.scatterplot(data['num_pages'], data['num_rating'],
-        #                 s=size_b, c=colors, alpha=0.7, legend=True, label="the biggest get most  award")
-        # st.set_option('deprecation.showPyplotGlobalUse', False)
-        # st.pyplot()
-        # df = px.data.gapminder()
-
+            "Avarage rating vs Number of Pages\n   The biggest has more  awards")
         t = data.head(100)
         size_b = t['award']**3 + 20
         px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
@@ -191,12 +181,16 @@ def main():
 
         st.pyplot()
 ###########################################################################################################
-        d_f = data.sort_values(
-            by='award', ascending=False).reset_index(drop=True).head(15)
-        g = sns.countplot(y=d_f['award'], order=d_f['author'])
-        g.set_ylabel('authers')
-        g.set_title('The Top 15 Authors ')
-        st.pyplot
+        data = load_data('clean')
+
+        def thebest_author(data):
+            d_f = data.sort_values(
+                by='award', ascending=False).reset_index(drop=True).head(15)
+            g = sns.countplot(y=d_f['award'], order=d_f['author'])
+            g.set_ylabel('authers')
+            g.set_title('The Top 15 Authors ')
+        thebest_author(data)
+        st.pyplot()
 ###########################################################################################################
    # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
 #     sns.barplot(x="award", y="author", data=df,
