@@ -153,7 +153,7 @@ def main():
             hist_data = [x1, x2, x3]
             group_labels = ['Min-Max Normalization',
                             'Mean Normalization', 'Before Normalization Avarge rate']
-            bin_siz = 120
+            bin_siz = 0.1
             min_edge = 0
             max_edge = 10
             N = (max_edge-min_edge)//bin_siz
