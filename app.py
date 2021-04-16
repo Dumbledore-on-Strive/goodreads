@@ -4,7 +4,7 @@ import matplotlib as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
-import altair as alt
+import plotly.express as plx
 
 
 st.title("  Dumblodere Team  ")
