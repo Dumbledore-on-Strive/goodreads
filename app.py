@@ -5,6 +5,7 @@ import seaborn as sns
 import numpy as np
 from PIL import Image
 import plotly.express as px
+import plotly.figure_factory as ff
 
 
 # st.title("  Dumblodere Team  ")
