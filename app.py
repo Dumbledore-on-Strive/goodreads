@@ -56,9 +56,12 @@ def main():
             st.checkbox("Great", value=True)
     elif choice == "Data Scrapping":
         st.subheader("Data Processing")
+        data = load_data('clean')
         header = st.beta_container()
         dataset = st.beta_container()
-        filters = st.sidebar.radio('sentiment', ("na", "ni", "ne"))
+        filters = st.sidebar.radio(
+            'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
+        # st.sidebar.markdown(data.query(""))
         with dataset:
             st.header("1000 books data frame from scrapper")
             book_data = load_data("raw")
