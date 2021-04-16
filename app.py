@@ -147,6 +147,7 @@ def main():
             #              label="Min-Max Normalization", kde=True)
             # sns.histplot(data, x="mean_norm_ratings", color="red",
             #              label="Mean Normalization", kde=True)
+            colors = ['rgb(0, 0, 100)', 'rgb(0, 200, 200)']
             x1 = data["minmax_norm_ratings"]
             x2 = data["mean_norm_ratings"]
             x3 = data["avg_rating"]
