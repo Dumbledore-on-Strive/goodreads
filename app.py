@@ -121,6 +121,8 @@ def main():
 
     elif choice == "Business Analysis":
         st.subheader("Business Analysis")
+        conclusion = st.beta_container()
+        footer = st.beta_container()
 
         with conclusion:
             st.title('Time to invest money')
@@ -244,12 +246,7 @@ def main():
             st.subheader(
                 "Average Rating Analysis")
             st.markdown("")
-            sns.histplot(data, x="avg_rating", color="green",
-                         label="Before Normalization", kde=True)
-            sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
-                         label="Min-Max Normalization", kde=True)
-            sns.histplot(data, x="mean_norm_ratings", color="red",
-                         label="Mean Normalization", kde=True)
+
             x1 = data["minmax_norm_ratings"]
             x2 = data["mean_norm_ratings"]
             x3 = data["avg_rating"]
