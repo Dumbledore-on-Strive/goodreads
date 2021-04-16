@@ -137,11 +137,11 @@ def main():
                 # fig, ax = plt.subplots()
                 # ax.scatter([1, 2, 3], [1, 2, 3])
                 size_b = data['award']**2*12
-                colors = np.random.rand(df.shape[0])
+                colors = np.random.rand(data.shape[0])
                 sns.scatterplot(data['num_pages'], data['num_rating'],
                                 s=size_b, c=colors, alpha=0.5, legend=True)
-            scatter_2d = scatter_2D_plot(data)
-            st.pyplot(scatter_2d)
+            scatter_2D_plot(data)
+            st.pyplot()
 
             #############################################
         sentiment_count = data['series'].value_counts()
