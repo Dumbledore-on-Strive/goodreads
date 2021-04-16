@@ -46,6 +46,12 @@ def main():
         to_do5 = st.checkbox("about dumbloder")
         image = Image.open('cartoon.png')
         st.image(image, caption='Dumbledore')
+        header = st.beta_container()
+        team = st.beta_container()
+        activities = st.beta_container()
+        dataset = st.beta_container()
+        conclusion = st.beta_container()
+        footer = st.beta_container()
         with header:
             st.title('Dumbledore on Strive!')  # site title h1
             st.text(' ')
@@ -59,7 +65,20 @@ def main():
                 '* **Plot:** create plot and graphs for better visualization')
             st.text(' ')
             st.text(' ')
-
+            with team:
+                # meet the team button
+                if st.button("Meet the team"):
+                    st.header('Team')
+                    st.markdown(
+                        '* [Fabio Fistarol](https://github.com/fistadev)')
+                    st.markdown(
+                        '* [Agathyia Raja](https://github.com/AgathiyaRaja)')
+                    st.markdown(
+                        '* [Camelia Ignat](https://github.com/avocami)')
+                    st.markdown(
+                        '* [Nurlan Sarkhanov](https://github.com/nsarkhanov)')
+                    st.text(' ')
+                    st.text(' ')
         #     'About The project .What we did, What we will do to imporve code :sunglasses:')
         agree = st.checkbox("I agree")
         if agree:
