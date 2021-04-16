@@ -88,12 +88,6 @@ def main():
         sentiment_count = data['series'].value_counts()
         sentiment_count = pd.DataFrame(
             {'Sentiment': sentiment_count.index, 'series': sentiment_count.values})
-        if st.sidebar.checkbox("Show", True):
-            st.markdown("## something")
-            if np.select == "Histogram":
-                fig = px.bar(sentiment_count, x='Sentiment',
-                             y='series', color='tweets', height=500)
-                st.pyplot(fig)
 
         st.write(data.head(10))
         # graph bar chart mean
