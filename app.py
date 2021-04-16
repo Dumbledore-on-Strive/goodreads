@@ -131,7 +131,17 @@ def main():
         sns.set(rc={'figure.figsize': (7, 8)})
 
         st.pyplot()
-
+###########################################################################################################
+        g = sns.countplot(y=tmp[0], order=[
+            'Mood Disorder', 'Anxiety Disorder', 'Attention Deficit Hyperactivity Disorder',
+            'Post-traumatic Stress Disorder', 'Obsessive-Compulsive Disorder',
+            'Stress Response Syndromes', 'Personality Disorder', 'Substance Use Disorder',
+            'Eating Disorder', 'Addictive Disorder', 'Dissociative Disorder',
+            'Psychotic Disorder', 'Others'])
+        g.set_ylabel('Disorders')
+        g.set_title('Distribution of Mental Health Disor')
 
 ###########################################################################################################
+
+
 main()
