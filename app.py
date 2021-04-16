@@ -120,7 +120,8 @@ def main():
         st.pyplot()
 ################################################################################################################################
         st.subheader(
-            "Min-Max Normalization  vs Mean Normalisation  vs before Normalization Distrubtion")
+            "Min-Max Normalization vs Mean Normalisation vs before Normalization Distrubtion\n")
+        st.markdown("")
         sns.histplot(data, x="avg_rating", color="green",
                      label="Before Normalization", kde=True)
         sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
