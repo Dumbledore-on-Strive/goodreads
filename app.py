@@ -157,13 +157,13 @@ def main():
 
         ########################################################################################################
             # tthe side bar for visalization
-        filters = st.sidebar.radio(
-            'Selection', ("The most awarded book", "The best Author", ))
+        # filters = st.sidebar.radio(
+        #     'Selection', ("The most awarded book", "The best Author", ))
 
         ######
         st.sidebar.markdown("Which Type of Graph do want?")
         np.select = st.sidebar.selectbox(
-            "Graph type", ['Histogram', "Bar Chart", 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
+            "Graph type", ["Scatter plot", "Bar Chart", 'Histogram',  'Pie Chart'], key='1')
         if np.select == "Scatter plot":
             st.markdown(
                 '- Create a 2D scatterplot with pages on the x-axis and num_ratings on the y-axis.')
