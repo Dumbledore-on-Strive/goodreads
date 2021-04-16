@@ -130,15 +130,15 @@ def main():
             sns.scatterplot(data['num_pages'], data['num_rating'],
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
-        # def group_bar_chart(df):
-        #     tmp = data.groupby("original_publish_year")[
-        #         "award"].mean().sort_values()
-        #     st.bar_chart(tmp)
+        def group_bar_chart(df):
+            tmp = data.groupby("original_publish_year")[
+                "award"].mean().sort_values()
+            st.bar_chart(tmp)
         ########################################################################################################
             # tthe side bar for visalization
         filters = st.sidebar.radio(
             'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
-        st.sidebar.markdown("Select what kind of Graph you want")
+        st.sidebar.markdown("Which Type of Graph do want?")
         np.select = st.sidebar.selectbox(
             "Graph type", ['Histogram', "Bar Chart", 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
         if np.select == "Scatter plot":
@@ -148,15 +148,14 @@ def main():
             scatter_2D_plot(data)
             st.pyplot()
 ###########################################################################
+            # Bar Charts
+        if np.select == "Bar Chart":
+            group_bar_chart(data)
+            st.pyplot()
+###########################################################################
 
-        # def group_bar_chart(df):
-        #     tmp = data.groupby("original_publish_year")[
-        #         "award"].mean().sort_values()
-        #     st.bar_chart(tmp)
 #############################################################################
-        # tmp = data.groupby("original_publish_year")[
-        #     "award"].max().sort_values()
-        # st.bar_chart(tmp)
+
 #########################################################################################
 
 
