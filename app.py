@@ -46,12 +46,15 @@ def main():
         to_do5 = st.checkbox("about dumbloder")
         image = Image.open('cartoon.png')
         st.image(image, caption='Dumbledore')
+
+        ####################################################
         header = st.beta_container()
         team = st.beta_container()
         activities = st.beta_container()
         dataset = st.beta_container()
         conclusion = st.beta_container()
         footer = st.beta_container()
+        ####################################################
         with header:
             st.title('Dumbledore on Strive!')  # site title h1
             st.text(' ')
@@ -83,6 +86,17 @@ def main():
         agree = st.checkbox("I agree")
         if agree:
             st.checkbox("Great", value=True)
+
+        with activities:
+            if st.button("Activities"):
+                # st.header('Activities')
+                st.markdown('* Webscraping')
+                st.markdown('* Data Visualisation')
+                st.markdown('* Data Analysis ')
+                st.markdown('* Business Scenario')
+                st.text(' ')
+
+##########################################################################
     elif choice == "Data Scrapping":
         st.subheader("Data Processing")
         data = load_data('raw')
