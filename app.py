@@ -81,6 +81,10 @@ def main():
         filters = st.sidebar.radio(
             'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
         # st.sidebar.markdown(data.query(""))
+        st.sidebar.markdown("Select what kind of Graph you want")
+        np.select = st.sidebar.selectbox(
+            "Graph type", ['Histogram', 'Pie Chart'], key='1')
+
         st.write(df.head(10))
         # graph bar chart mean
         tmp = df.groupby("original_publish_year")[
