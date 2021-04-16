@@ -140,13 +140,28 @@ def main():
             st.subheader(
                 "Min-Max Normalization vs Mean Normalisation vs before Normalization Distrubtion\n")
             st.markdown("")
-            sns.histplot(data, x="avg_rating", color="green",
-                         label="Before Normalization", kde=True)
-            sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
-                         label="Min-Max Normalization", kde=True)
-            sns.histplot(data, x="mean_norm_ratings", color="red",
-                         label="Mean Normalization", kde=True)
-            sns.set(rc={'figure.figsize': (7, 8)})
+            # sns.histplot(data, x="avg_rating", color="green",
+            #              label="Before Normalization", kde=True)
+            # sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
+            #              label="Min-Max Normalization", kde=True)
+            # sns.histplot(data, x="mean_norm_ratings", color="red",
+            #              label="Mean Normalization", kde=True)
+            x1 = data["minmax_norm_ratings"]
+            x2 = data["mean_norm_ratings"]
+            x3 = data["avg_rating"]
+            hist_data = [x1, x2, x3]
+            group_labels = ['Min-Max Normalization',
+                            'Mean Normalization', 'Before Normalization Avarge rate']
+            fig = ff.create_distplot(
+                hist_data, group_labels, bin_size=[.1, .25, .5])
+
+
+# >>> # Create distplot with custom bin_size
+# >>> fig = ff.create_distplot(
+# ...         hist_data, group_labels, bin_size=[.1, .25, .5])
+# >>>
+# >>> # Plot!
+# >>> st.plotly_chart(fig, use_container_width=True)
 
         def best_book(df):
             st.markdown("")
