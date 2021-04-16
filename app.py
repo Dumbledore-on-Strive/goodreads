@@ -126,7 +126,7 @@ def main():
         def group_bar_chart(data):
             st.markdown("")
             st.markdown("")
-            st.subheader("The published Book by year ")
+            st.subheader("The published Books by year ")
             st.markdown("")
             st.markdown("")
             tmp = data.groupby("original_publish_year")[
