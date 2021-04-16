@@ -182,13 +182,13 @@ def main():
         st.pyplot()
 ###########################################################################################################
         data = load_data('clean')
+        st.set_option('deprecation.showPyplotGlobalUse', False)
 
         def thebest_author(data):
             d_f = data.sort_values(
                 by='award', ascending=False).reset_index(drop=True).head(15)
-            g = sns.countplot(y=d_f['award'], order=d_f['author'])
-            g.set_ylabel('authers')
-            g.set_title('The Top 15 Authors ')
+            sns.countplot(x=d_f['award'], order=d_f['author'])
+
         thebest_author(data)
         st.pyplot()
 ###########################################################################################################
