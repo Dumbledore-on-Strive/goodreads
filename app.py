@@ -107,13 +107,6 @@ def main():
             st.header("1000 books data frame from scrapper")
             book_data = load_data("raw")
             st.write(book_data.head(10))
-            # number_list = book_data.shape[0]
-            # st.success("Efficiency percentage of data  Scrapping ")
-            # eff_sc = st.button("Show Answer :sunglasses: ", key="1")
-            # if eff_sc:
-            #     st.write(number_list/10, "%")
-            # st.text(
-            #     " we extract data from website with  95 percentage  effciency  ")
 
     elif choice == "Data Processing":
         st.subheader("Data Processing")
@@ -156,17 +149,11 @@ def main():
             sns.set(rc={'figure.figsize': (7, 8)})
 
         def best_book(df):
+            df = data.sort_values(by='award', ascending=False).reset_index(
+                drop=True).head(15)
+
             sns.barplot(x="award", y="author", data=df,
                         label='The best author who has more awards')
-
-      # st.subheader(
-        #     "Avarage rating vs Number of Pages\n   The biggest has more  awards")
-        # t = data.head(100)
-        # size_b = t['award']**3 + 20
-        # px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
-        #            size=size_b, color="minmax_norm_ratings",
-        #            hover_name="series", log_x=True, size_max=60)
-        # st.pyplot()
 
         ########################################################################################################
             # tthe side bar for visalization
