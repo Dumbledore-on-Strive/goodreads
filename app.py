@@ -158,7 +158,7 @@ def main():
         ########################################################################################################
             # tthe side bar for visalization
         filters = st.sidebar.radio(
-            'Selection', ("The most awarded book"))
+            'Selection', ("The most awarded book", "The best Author", ))
 
         ######
         st.sidebar.markdown("Which Type of Graph do want?")
