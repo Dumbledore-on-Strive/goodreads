@@ -131,13 +131,44 @@ def main():
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
         def group_bar_chart(df):
+            st.markdown("")
+            st.markdown("")
+            st.subheader("The top 15 best Author ")
+            st.markdown("")
+            st.markdown("")
             tmp = data.groupby("original_publish_year")[
                 "award"].mean().sort_values()
             st.bar_chart(tmp)
+
+        def norm_functions(df):
+            st.markdown("")
+            st.markdown("")
+            st.subheader(
+                "Min-Max Normalization vs Mean Normalisation vs before Normalization Distrubtion\n")
+            st.markdown("")
+
+            sns.histplot(data, x="avg_rating", color="green",
+                         label="Before Normalization", kde=True)
+            sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
+                         label="Min-Max Normalization", kde=True)
+            sns.histplot(data, x="mean_norm_ratings", color="red",
+                         label="Mean Normalization", kde=True)
+            sns.set(rc={'figure.figsize': (7, 8)})
+      # st.subheader(
+        #     "Avarage rating vs Number of Pages\n   The biggest has more  awards")
+        # t = data.head(100)
+        # size_b = t['award']**3 + 20
+        # px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
+        #            size=size_b, color="minmax_norm_ratings",
+        #            hover_name="series", log_x=True, size_max=60)
+        # st.pyplot()
+
         ########################################################################################################
             # tthe side bar for visalization
         filters = st.sidebar.radio(
             'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
+
+        ######
         st.sidebar.markdown("Which Type of Graph do want?")
         np.select = st.sidebar.selectbox(
             "Graph type", ['Histogram', "Bar Chart", 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
@@ -152,6 +183,8 @@ def main():
         if np.select == "Bar Chart":
             group_bar_chart(data)
             st.pyplot()
+            norm_functions(data)
+            st.pyplot()
 ###########################################################################
 
 #############################################################################
@@ -160,28 +193,9 @@ def main():
 
 
 ###########################################################
-        st.subheader(
-            "Avarage rating vs Number of Pages\n   The biggest has more  awards")
-        t = data.head(100)
-        size_b = t['award']**3 + 20
-        px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
-                   size=size_b, color="minmax_norm_ratings",
-                   hover_name="series", log_x=True, size_max=60)
-        st.pyplot()
-################################################################################################################################
-        st.subheader(
-            "Min-Max Normalization vs Mean Normalisation vs before Normalization Distrubtion\n")
-        st.markdown("")
-        st.markdown("")
-        sns.histplot(data, x="avg_rating", color="green",
-                     label="Before Normalization", kde=True)
-        sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
-                     label="Min-Max Normalization", kde=True)
-        sns.histplot(data, x="mean_norm_ratings", color="red",
-                     label="Mean Normalization", kde=True)
-        sns.set(rc={'figure.figsize': (7, 8)})
 
-        st.pyplot()
+################################################################################################################################
+
 ###########################################################################################################
         st.text(" ")
         st.text(" ")
