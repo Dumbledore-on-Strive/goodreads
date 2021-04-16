@@ -56,12 +56,10 @@ def main():
             st.checkbox("Great", value=True)
     elif choice == "Data Scrapping":
         st.subheader("Data Processing")
-        data = load_data('clean')
+        data = load_data('raw')
         header = st.beta_container()
         dataset = st.beta_container()
-        filters = st.sidebar.radio(
-            'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
-        # st.sidebar.markdown(data.query(""))
+
         with dataset:
             st.header("1000 books data frame from scrapper")
             book_data = load_data("raw")
@@ -76,9 +74,13 @@ def main():
 
     elif choice == "Data Processing":
         st.subheader("Data Processing")
+        ############################################################################################################################
     else:
         st.subheader("Data Visualisation")
         df = load_data("clean")
+        filters = st.sidebar.radio(
+            'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
+        # st.sidebar.markdown(data.query(""))
         st.write(df.head(10))
         # graph bar chart mean
         tmp = df.groupby("original_publish_year")[
