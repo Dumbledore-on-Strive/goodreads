@@ -132,17 +132,19 @@ def main():
 
         st.pyplot()
 ###########################################################################################################
-
-        g = sns.countplot(y=tmp[0], order=data['author']
-        g.set_ylabel('Disorders')
-        g.set_title('Distribution of Mental Health Disor')
-
+        d_f = data.sort_values(
+            by='award', ascending=False).reset_index(drop=True).head(15)
+        g = sns.countplot(y=d_f['award'], order=d_f['author'])
+        g.set_ylabel('authers')
+        g.set_title('The Top 15 Authors ')
+        st.pyplot(g)
 ###########################################################################################################
    # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
-    sns.barplot(x="award", y="author", data=df,
-                label='The best author who has more awards')
-    plt.legend()
-    plt.show()
-best_book(best)
+#     sns.barplot(x="award", y="author", data=df,
+#                 label='The best author who has more awards')
+#     plt.legend()
+#     plt.show()
+# best_book(best)
+
 
 main()
