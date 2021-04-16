@@ -153,14 +153,9 @@ def main():
             hist_data = [x1, x2, x3]
             group_labels = ['Min-Max Normalization',
                             'Mean Normalization', 'Before Normalization Avarge rate']
-            bin_siz = 0.1
-            min_edge = 0
-            max_edge = 10
-            N = (max_edge-min_edge)//bin_siz
-            Nplus1 = N + 1
-            bin_list = np.linspace(min_edge, max_edge, Nplus1)
+
             fig = ff.create_distplot(
-                hist_data, group_labels, bin_size=bin_list)
+                hist_data, group_labels, bin_size=10)
             st.plotly_chart(fig, use_container_width=True)
 
 
