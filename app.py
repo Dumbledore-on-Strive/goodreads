@@ -197,9 +197,7 @@ def main():
             # Bar Charts
         if np.select == "Bar Chart":
             group_bar_chart(data)
-            st.pyplot()
             norm_functions(data)
-            st.pyplot()
             best_book(data)
             st.pyplot()
 ###########################################################################
