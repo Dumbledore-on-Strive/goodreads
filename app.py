@@ -181,7 +181,7 @@ def main():
 
         st.pyplot()
 ###########################################################################################################
-        
+        st.text(" ")
         st.text(" ")
         df = data.sort_values(by='award', ascending=False).reset_index(
             drop=True).head(15)
