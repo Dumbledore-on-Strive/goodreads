@@ -99,7 +99,6 @@ def main():
             "award"].max().sort_values()
         st.bar_chart(tmp)
 #########################################################################################
-        st.map(data)
 
 
 ###########################################################
@@ -113,11 +112,11 @@ def main():
         # st.pyplot()
         # df = px.data.gapminder()
 ################################################################################################################################
-        fig = px.scatter(x="num_pages", y="num_rating",  # data.query("year==2007"),
+        fig = px.scatter(data, x="num_pages", y="num_rating",  # data.query("year==2007"),
                          size=size_b, color="continent",
                          hover_name="series", log_x=True, size_max=60)
         fig.show()
-
+        st.pyplot()
         st.subheader("Min-Max Normalization Distrubtion")
 ############################################################################################################
         st.subheader("Mean Normalization Distrubtion")
