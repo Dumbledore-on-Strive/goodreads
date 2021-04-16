@@ -23,6 +23,17 @@ with frame4:
     st.header("Camelia Ignat")
 
 
+@st.cache(persist=True)
+def load_data(ty):
+    if ty == "raw":
+        data = pd.read_csv(
+            '/home/nsarkhanov/code/github/AI_Course_Exercise/M2/Team_build/goodreads/goodreads_1000_books_list.csv')
+    if ty == "clean":
+        data = pd.read_csv(
+            "/home/nsarkhanov/code/github/AI_Course_Exercise/M2/Team_build/goodreads/preprocess_data.csv")
+    return data
+
+
 def main():
     menu = ["Home", "Data Scrapping", "Data Processing", "Data Visualisation"]
     choice = st.sidebar.selectbox("Menu", menu)
@@ -49,7 +60,7 @@ def main():
         dataset = st.beta_container()
         with dataset:
             st.header("1000 books data frame from scrapper")
-            book_data = pd.read_csv('goodreads_1000_books_list.csv')
+            book_data = load_data("raw")
             st.write(book_data.head(10))
             # number_list = book_data.shape[0]
             # st.success("Efficiency percentage of data  Scrapping ")
@@ -63,7 +74,7 @@ def main():
         st.subheader("Data Processing")
     else:
         st.subheader("Data Visualisation")
-        df = pd.read_csv("preprocess_data.csv")
+        df = load_data("clean")
         st.write(df.head(10))
         # graph bar chart mean
         tmp = df.groupby("original_publish_year")[
