@@ -124,11 +124,14 @@ def main():
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
         def group_bar_chart(data):
-
+            st.markdown("")
+            st.markdown("")
+            st.subheader("The published Book by year ")
             st.markdown("")
             st.markdown("")
             tmp = data.groupby("original_publish_year")[
                 "award"].mean().sort_values()
+
             st.bar_chart(tmp)
 
         def norm_functions(data):
@@ -175,7 +178,7 @@ def main():
 ###########################################################################
             # Bar Charts
         if np.select == "Bar Chart":
-            st.subheader("the most published Book by year")
+
             group_bar_chart(data)
             st.pyplot()
             norm_functions(data)
