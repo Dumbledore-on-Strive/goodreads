@@ -126,7 +126,7 @@ def main():
         # st.sidebar.markdown(data.query(""))
         st.sidebar.markdown("Select what kind of Graph you want")
         np.select = st.sidebar.selectbox(
-            "Graph type", ['Histogram', 'Pie Chart', "Scatter plot"], key='1')
+            "Graph type", ['Histogram', 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
         if np.select == "Scatter plot":
             st.markdown(
                 '- Create a 2D scatterplot with pages on the x-axis and num_ratings on the y-axis.')
