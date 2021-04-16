@@ -130,7 +130,7 @@ def main():
             sns.scatterplot(data['num_pages'], data['num_rating'],
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
-        def group_bar_chart(df):
+        def group_bar_chart(data):
             st.markdown("")
             st.markdown("")
             st.subheader("The top 15 best Author ")
@@ -140,7 +140,7 @@ def main():
                 "award"].mean().sort_values()
             st.bar_chart(tmp)
 
-        def norm_functions(df):
+        def norm_functions(data):
             st.markdown("")
             st.markdown("")
             st.subheader(
@@ -154,6 +154,11 @@ def main():
             sns.histplot(data, x="mean_norm_ratings", color="red",
                          label="Mean Normalization", kde=True)
             sns.set(rc={'figure.figsize': (7, 8)})
+
+        def best_book(df):
+            sns.barplot(x="award", y="author", data=df,
+                        label='The best author who has more awards')
+
       # st.subheader(
         #     "Avarage rating vs Number of Pages\n   The biggest has more  awards")
         # t = data.head(100)
@@ -182,8 +187,9 @@ def main():
             # Bar Charts
         if np.select == "Bar Chart":
             group_bar_chart(data)
-            st.pyplot()
             norm_functions(data)
+            best_book(data)
+
             st.pyplot()
 ###########################################################################
 
@@ -197,20 +203,20 @@ def main():
 ################################################################################################################################
 
 ###########################################################################################################
-        st.text(" ")
-        st.text(" ")
-        df = data.sort_values(by='award', ascending=False).reset_index(
-            drop=True).head(15)
-        st.set_option('deprecation.showPyplotGlobalUse', False)
-        st.subheader('   The Top 15 best Author  ')
-        st.text(" ")
-        st.text(" ")
+        # st.text(" ")
+        # st.text(" ")
+        # df = data.sort_values(by='award', ascending=False).reset_index(
+        #     drop=True).head(15)
+        # st.set_option('deprecation.showPyplotGlobalUse', False)
+        # st.subheader('   The Top 15 best Author  ')
+        # st.text(" ")
+        # st.text(" ")
 
-        def best_book(df):
-            sns.barplot(x="award", y="author", data=df,
-                        label='The best author who has more awards')
-        best_book(df)
-        st.pyplot()
+        # def best_book(df):
+        #     sns.barplot(x="award", y="author", data=df,
+        #                 label='The best author who has more awards')
+        # best_book(df)
+        # st.pyplot()
 ###########################################################################################################
    # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
 #     sns.barplot(x="award", y="author", data=df,
