@@ -184,15 +184,11 @@ def main():
         st.write(data)
         df = data.sort_values(by='award', ascending=False).reset_index(
             drop=True).head(15)
-
         st.set_option('deprecation.showPyplotGlobalUse', False)
 
         def best_book(df):
-
             sns.barplot(x="award", y="author", data=df,
                         label='The best author who has more awards')
-
-            plt.show()
         best_book(df)
         st.pyplot()
 ###########################################################################################################
