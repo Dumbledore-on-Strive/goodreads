@@ -39,10 +39,6 @@ def main():
     choice = st.sidebar.selectbox("Menu", menu)
     if choice == "Home":
         st.subheader("Home")
-
-        image = Image.open('cartoon.png')
-        st.image(image, caption='Dumbledore')
-
         ####################################################
         header = st.beta_container()
         team = st.beta_container()
@@ -54,6 +50,8 @@ def main():
         with header:
             st.title('Dumbledore on Strive!')  # site title h1
             st.text(' ')
+            image = Image.open('cartoon.png')
+            st.image(image, caption='Dumbledore')
             st.markdown(
                 "Enjoy the journey and you'll see the magic :sparkles:")
             st.text(' ')
@@ -128,8 +126,10 @@ def main():
         # st.sidebar.markdown(data.query(""))
         st.sidebar.markdown("Select what kind of Graph you want")
         np.select = st.sidebar.selectbox(
-            "Graph type", ['Histogram', 'Pie Chart'], key='1')
-#############################################
+            "Graph type", ['Histogram', 'Pie Chart', "Scatter plot"], key='1')
+        if np.select == "Scatter plot":
+
+            #############################################
         sentiment_count = data['series'].value_counts()
         sentiment_count = pd.DataFrame(
             {'Sentiment': sentiment_count.index, 'series': sentiment_count.values})
