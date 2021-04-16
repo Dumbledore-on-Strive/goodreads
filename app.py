@@ -58,6 +58,7 @@ def main():
         st.subheader("Data Processing")
         header = st.beta_container()
         dataset = st.beta_container()
+        filters = st.sidebar.radio('sentiment', ("na", "ni", "ne"))
         with dataset:
             st.header("1000 books data frame from scrapper")
             book_data = load_data("raw")
