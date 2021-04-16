@@ -130,6 +130,10 @@ def main():
             sns.scatterplot(data['num_pages'], data['num_rating'],
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
+        # def group_bar_chart(df):
+        #     tmp = data.groupby("original_publish_year")[
+        #         "award"].mean().sort_values()
+        #     st.bar_chart(tmp)
         ########################################################################################################
             # tthe side bar for visalization
         filters = st.sidebar.radio(
@@ -145,10 +149,10 @@ def main():
             st.pyplot()
 ###########################################################################
 
-        def group_bar_chart(df):
-            tmp = data.groupby("original_publish_year")[
-                "award"].mean().sort_values()
-            st.bar_chart(tmp)
+        # def group_bar_chart(df):
+        #     tmp = data.groupby("original_publish_year")[
+        #         "award"].mean().sort_values()
+        #     st.bar_chart(tmp)
 #############################################################################
         # tmp = data.groupby("original_publish_year")[
         #     "award"].max().sort_values()
