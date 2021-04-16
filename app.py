@@ -7,20 +7,20 @@ from PIL import Image
 import plotly.express as px
 
 
-st.title("  Dumblodere Team  ")
+# st.title("  Dumblodere Team  ")
 
-st.markdown(" Team members")
-frame1, frame2, frame3, frame4 = st.beta_columns(4)
+# st.markdown(" Team members")
+# frame1, frame2, frame3, frame4 = st.beta_columns(4)
 
-with frame1:
-    st.header("Nurlan Sarkhanov")
-    # st.image("https://static.streamlit.io/examples/cat.jpg")
-with frame2:
-    st.header("Fabio Fistarol")
-with frame3:
-    st.header("Agathiya Raja")
-with frame4:
-    st.header("Camelia Ignat")
+# with frame1:
+#     st.header("Nurlan Sarkhanov")
+#     # st.image("https://static.streamlit.io/examples/cat.jpg")
+# with frame2:
+#     st.header("Fabio Fistarol")
+# with frame3:
+#     st.header("Agathiya Raja")
+# with frame4:
+#     st.header("Camelia Ignat")
 
 
 @st.cache(persist=True)
@@ -91,6 +91,12 @@ def main():
                 to_do4 = st.checkbox("Data Visualization")
                 to_do5 = st.checkbox("* Business Scenario")
                 st.text(' ')
+
+        with dataset:
+            st.header('Goodreads - Books That Should Be Made Into Movies')
+            df = load_data('raw')
+            if st.button("View Full Data"):
+                st.write(df)
 
 ##########################################################################
     elif choice == "Data Scrapping":
