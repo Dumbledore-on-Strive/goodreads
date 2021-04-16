@@ -39,11 +39,7 @@ def main():
     choice = st.sidebar.selectbox("Menu", menu)
     if choice == "Home":
         st.subheader("Home")
-        to_do1 = st.checkbox("Web Scrapping ")
-        to_do2 = st.checkbox("Data Analysis")
-        to_do3 = st.checkbox("Data Prosessing")
-        to_do4 = st.checkbox("Data Visualization")
-        to_do5 = st.checkbox("about dumbloder")
+
         image = Image.open('cartoon.png')
         st.image(image, caption='Dumbledore')
 
@@ -89,11 +85,11 @@ def main():
 
         with activities:
             if st.button("Activities"):
-                # st.header('Activities')
-                st.markdown('* Webscraping')
-                st.markdown('* Data Visualisation')
-                st.markdown('* Data Analysis ')
-                st.markdown('* Business Scenario')
+                to_do1 = st.checkbox("Web Scrapping ")
+                to_do2 = st.checkbox("Data Analysis")
+                to_do3 = st.checkbox("Data Prosessing")
+                to_do4 = st.checkbox("Data Visualization")
+                to_do5 = st.checkbox("* Business Scenario")
                 st.text(' ')
 
 ##########################################################################
