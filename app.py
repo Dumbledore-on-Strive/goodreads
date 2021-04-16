@@ -88,17 +88,21 @@ def main():
         sentiment_count = data['series'].value_counts()
         sentiment_count = pd.DataFrame(
             {'Sentiment': sentiment_count.index, 'series': sentiment_count.values})
-
+###########################################################################
         st.write(data.head(10))
         # graph bar chart mean
         tmp = data.groupby("original_publish_year")[
             "award"].mean().sort_values()
         st.bar_chart(tmp)
-
+#############################################################################
         tmp = data.groupby("original_publish_year")[
             "award"].max().sort_values()
         st.bar_chart(tmp)
+#########################################################################################
+        st.map(data)
 
+
+###########################################################
         st.subheader(
             "Avarage rating vs Number of Pages\n   The biggest has more  avards")
         size_b = data['award']**3 + 20
