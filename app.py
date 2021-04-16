@@ -137,7 +137,7 @@ def main():
         g = sns.countplot(y=d_f['award'], order=d_f['author'])
         g.set_ylabel('authers')
         g.set_title('The Top 15 Authors ')
-        st.pyplot(g)
+        st.pyplot
 ###########################################################################################################
    # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
 #     sns.barplot(x="award", y="author", data=df,
