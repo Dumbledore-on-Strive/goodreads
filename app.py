@@ -128,6 +128,20 @@ def main():
         np.select = st.sidebar.selectbox(
             "Graph type", ['Histogram', 'Pie Chart', "Scatter plot"], key='1')
         if np.select == "Scatter plot":
+            st.markdown(
+                '- Create a 2D scatterplot with pages on the x-axis and num_ratings on the y-axis.')
+            st.text(" ")
+            data = load_data("clean")
+
+            def scatter_2D_plot(data):
+                # fig, ax = plt.subplots()
+                # ax.scatter([1, 2, 3], [1, 2, 3])
+                size_b = data['award']**2*12
+                colors = np.random.rand(df.shape[0])
+                sns.scatterplot(data['num_pages'], data['num_rating'],
+                                s=size_b, c=colors, alpha=0.5, legend=True)
+            scatter_2d = scatter_2D_plot(data)
+            st.pyplot(scatter_2d)
 
             #############################################
         sentiment_count = data['series'].value_counts()
