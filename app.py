@@ -154,6 +154,7 @@ def main():
                             'Mean Normalization', 'Before Normalization Avarge rate']
             fig = ff.create_distplot(
                 hist_data, group_labels, bin_size=[.1, .25, .5])
+            st.plotly_chart(fig, use_container_width=True)
 
 
 # >>> # Create distplot with custom bin_size
@@ -162,6 +163,7 @@ def main():
 # >>>
 # >>> # Plot!
 # >>> st.plotly_chart(fig, use_container_width=True)
+
 
         def best_book(df):
             st.markdown("")
