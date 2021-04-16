@@ -104,22 +104,25 @@ def main():
 ###########################################################
         st.subheader(
             "Avarage rating vs Number of Pages\n   The biggest has more  avards")
-        size_b = data['award']**3 + 20
-        colors = np.random.rand(data.shape[0])
+
+        # colors = np.random.rand(data.shape[0])
         # sns.scatterplot(data['num_pages'], data['num_rating'],
         #                 s=size_b, c=colors, alpha=0.7, legend=True, label="the biggest get most  award")
         # st.set_option('deprecation.showPyplotGlobalUse', False)
         # st.pyplot()
         # df = px.data.gapminder()
-################################################################################################################################
+
         t = data.head(100)
+        size_b = t['award']**3 + 20
         px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
                    size=size_b, color="minmax_norm_ratings",
                    hover_name="series", log_x=True, size_max=60)
 
         st.pyplot()
-
+################################################################################################################################
         st.subheader("Min-Max Normalization Distrubtion")
+
+
 ############################################################################################################
         st.subheader("Mean Normalization Distrubtion")
         sns.displot(data, x="mean_norm_ratings", kde=True, fill=True)
