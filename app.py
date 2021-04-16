@@ -154,8 +154,7 @@ def main():
             group_labels = ['Min-Max Normalization',
                             'Mean Normalization', 'Before Normalization Avarge rate']
 
-            fig = ff.create_distplot(
-                hist_data, group_labels, bin_size=10)
+            fig = ff.create_distplot(hist_data, group_labels, bin_size=0.1)
             st.plotly_chart(fig, use_container_width=True)
 
 
