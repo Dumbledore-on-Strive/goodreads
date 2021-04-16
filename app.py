@@ -46,11 +46,21 @@ def main():
         to_do5 = st.checkbox("about dumbloder")
         image = Image.open('cartoon.png')
         st.image(image, caption='Dumbledore')
-        st.success("Scrapping 1000 books details from www.goodreads.com")
-        st.button("Project Github timeline ")
-        st.success("Scrapping 1000 books details from www.goodreads.com")
-        st.write(
-            'About The project .What we did, What we will do to imporve code :sunglasses:')
+        with header:
+            st.title('Dumbledore on Strive!')  # site title h1
+            st.text(' ')
+            st.markdown(
+                "Enjoy the journey and you'll see the magic :sparkles:")
+            st.text(' ')
+            st.markdown(
+                '* **Webscraping:** get the information (data) from the web')
+            st.markdown('* **Dataframe:** add the data a spreadsheet file')
+            st.markdown(
+                '* **Plot:** create plot and graphs for better visualization')
+            st.text(' ')
+            st.text(' ')
+
+        #     'About The project .What we did, What we will do to imporve code :sunglasses:')
         agree = st.checkbox("I agree")
         if agree:
             st.checkbox("Great", value=True)
