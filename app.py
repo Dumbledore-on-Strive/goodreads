@@ -4,7 +4,7 @@ import matplotlib as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
-import plotly.express as plx
+import plotly.express as px
 
 
 st.title("  Dumblodere Team  ")
@@ -77,29 +77,39 @@ def main():
         ############################################################################################################################
     else:
         st.subheader("Data Visualisation")
-        df = load_data("clean")
+        data = load_data("clean")
         filters = st.sidebar.radio(
             'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
         # st.sidebar.markdown(data.query(""))
         st.sidebar.markdown("Select what kind of Graph you want")
         np.select = st.sidebar.selectbox(
             "Graph type", ['Histogram', 'Pie Chart'], key='1')
+#############################################
+        sentiment_count = data['series'].value_counts()
+        sentiment_count = pd.DataFrame(
+            {'Sentiment': sentiment_count.index, 'series': sentiment_count.values})
+        if st.sidebar.checkbox("Show", True):
+            st.markdown("## something")
+            if np.select == "Histogram":
+                fig = px.bar(sentiment_count, x='Sentiment',
+                             y='series', color='tweets', height=500)
+                st.pyplot(fig)
 
-        st.write(df.head(10))
+        st.write(data.head(10))
         # graph bar chart mean
-        tmp = df.groupby("original_publish_year")[
+        tmp = data.groupby("original_publish_year")[
             "award"].mean().sort_values()
         st.bar_chart(tmp)
 
-        tmp = df.groupby("original_publish_year")[
+        tmp = data.groupby("original_publish_year")[
             "award"].max().sort_values()
         st.bar_chart(tmp)
 
         st.subheader(
             "Avarage rating vs Number of Pages\n   The biggest has more  avards")
-        size_b = df['award']**3 + 20
-        colors = np.random.rand(df.shape[0])
-        sns.scatterplot(df['num_pages'], df['num_rating'],
+        size_b = data['award']**3 + 20
+        colors = np.random.rand(data.shape[0])
+        sns.scatterplot(data['num_pages'], data['num_rating'],
                         s=size_b, c=colors, alpha=0.7, legend=True, label="the biggest get most  award")
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
@@ -107,7 +117,7 @@ def main():
         st.subheader("Min-Max Normalization Distrubtion")
 ############################################################################################################
         st.subheader("Mean Normalization Distrubtion")
-        sns.displot(df, x="mean_norm_ratings", kde=True, fill=True)
+        sns.displot(data, x="mean_norm_ratings", kde=True, fill=True)
         sns.color_palette("Spectral", as_cmap=True)
         st.pyplot()
 ###########################################################################################################
