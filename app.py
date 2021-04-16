@@ -132,16 +132,17 @@ def main():
 
         st.pyplot()
 ###########################################################################################################
-        g = sns.countplot(y=tmp[0], order=[
-            'Mood Disorder', 'Anxiety Disorder', 'Attention Deficit Hyperactivity Disorder',
-            'Post-traumatic Stress Disorder', 'Obsessive-Compulsive Disorder',
-            'Stress Response Syndromes', 'Personality Disorder', 'Substance Use Disorder',
-            'Eating Disorder', 'Addictive Disorder', 'Dissociative Disorder',
-            'Psychotic Disorder', 'Others'])
+
+        g = sns.countplot(y=tmp[0], order=data['author']
         g.set_ylabel('Disorders')
         g.set_title('Distribution of Mental Health Disor')
 
 ###########################################################################################################
-
+   # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
+    sns.barplot(x="award", y="author", data=df,
+                label='The best author who has more awards')
+    plt.legend()
+    plt.show()
+best_book(best)
 
 main()
