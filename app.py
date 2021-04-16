@@ -124,9 +124,7 @@ def main():
                             s=size_b, c=colors, alpha=0.5, legend=True)
 
         def group_bar_chart(data):
-            st.markdown("")
-            st.markdown("")
-            st.subheader("The top 15 best Author ")
+
             st.markdown("")
             st.markdown("")
             tmp = data.groupby("original_publish_year")[
@@ -139,7 +137,6 @@ def main():
             st.subheader(
                 "Min-Max Normalization vs Mean Normalisation vs before Normalization Distrubtion\n")
             st.markdown("")
-
             sns.histplot(data, x="avg_rating", color="green",
                          label="Before Normalization", kde=True)
             sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
@@ -149,6 +146,11 @@ def main():
             sns.set(rc={'figure.figsize': (7, 8)})
 
         def best_book(df):
+            st.markdown("")
+            st.markdown("")
+            st.subheader("The top 15 best Author ")
+            st.markdown("")
+            st.markdown("")
             df = data.sort_values(by='award', ascending=False).reset_index(
                 drop=True).head(15)
 
@@ -173,6 +175,7 @@ def main():
 ###########################################################################
             # Bar Charts
         if np.select == "Bar Chart":
+            st.subheader("the most published Book by year")
             group_bar_chart(data)
             st.pyplot()
             norm_functions(data)
