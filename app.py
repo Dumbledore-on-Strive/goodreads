@@ -121,40 +121,38 @@ def main():
     else:
         st.subheader("Data Visualisation")
         data = load_data("clean")
+        # the all graphic functions
+        #  Scatter plots
+
+        def scatter_2D_plot(data):
+            size_b = data['award']**2*12
+            colors = np.random.rand(data.shape[0])
+            sns.scatterplot(data['num_pages'], data['num_rating'],
+                            s=size_b, c=colors, alpha=0.5, legend=True)
+
+        ########################################################################################################
+            # tthe side bar for visalization
         filters = st.sidebar.radio(
             'Selection', ("The most awarded book", "The best Author", "The highest rating book "))
-        # st.sidebar.markdown(data.query(""))
         st.sidebar.markdown("Select what kind of Graph you want")
         np.select = st.sidebar.selectbox(
-            "Graph type", ['Histogram', 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
+            "Graph type", ['Histogram', "Bar Chart", 'Pie Chart', "Scatter plot", "Normalization graphics", "Comparsion", "Who is the Best Author"], key='1')
         if np.select == "Scatter plot":
             st.markdown(
                 '- Create a 2D scatterplot with pages on the x-axis and num_ratings on the y-axis.')
             st.text(" ")
-            data = load_data("clean")
-
-            def scatter_2D_plot(data):
-                size_b = data['award']**2*12
-                colors = np.random.rand(data.shape[0])
-                sns.scatterplot(data['num_pages'], data['num_rating'],
-                                s=size_b, c=colors, alpha=0.5, legend=True)
             scatter_2D_plot(data)
             st.pyplot()
-
-            #############################################
-        sentiment_count = data['series'].value_counts()
-        sentiment_count = pd.DataFrame(
-            {'Sentiment': sentiment_count.index, 'series': sentiment_count.values})
 ###########################################################################
-        st.write(data.head(10))
-        # graph bar chart mean
-        tmp = data.groupby("original_publish_year")[
-            "award"].mean().sort_values()
-        st.bar_chart(tmp)
+
+        def group_bar_chart(df):
+            tmp = data.groupby("original_publish_year")[
+                "award"].mean().sort_values()
+            st.bar_chart(tmp)
 #############################################################################
-        tmp = data.groupby("original_publish_year")[
-            "award"].max().sort_values()
-        st.bar_chart(tmp)
+        # tmp = data.groupby("original_publish_year")[
+        #     "award"].max().sort_values()
+        # st.bar_chart(tmp)
 #########################################################################################
 
 
