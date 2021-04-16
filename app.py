@@ -181,16 +181,19 @@ def main():
 
         st.pyplot()
 ###########################################################################################################
-        df = ascending=False).reset_index(drop=True).head(15)
+        st.write(data)
+        df = data.sort_values(by='award', ascending=False).reset_index(
+            drop=True).head(15)
+
         st.set_option('deprecation.showPyplotGlobalUse', False)
 
         def best_book(df):
-            # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
+
             sns.barplot(x="award", y="author", data=df,
                         label='The best author who has more awards')
-            plt.legend()
+
             plt.show()
-        best_book(best)
+        best_book(df)
         st.pyplot()
 ###########################################################################################################
    # sns.histplot(data=df, y="award", color="red", label="the top most awards have ")
