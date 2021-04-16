@@ -117,18 +117,18 @@ def main():
         px.scatter(t, x="num_pages", y="num_rating",  # data.query("year==2007"),
                    size=size_b, color="minmax_norm_ratings",
                    hover_name="series", log_x=True, size_max=60)
-
         st.pyplot()
 ################################################################################################################################
-        st.subheader("Min-Max Normalization Distrubtion")
+        st.subheader(
+            "Min-Max Normalization  vs Mean Normalisation  vs before Normalization Distrubtion")
+        sns.histplot(data, x="avg_rating", color="skyblue",
+                     label="Before Normalization", kde=True)
+        sns.histplot(data, x="minmax_norm_ratings", color="skyblue",
+                     label="Min-Max Normalization", kde=True)
+        sns.histplot(data, x="mean_norm_ratings", color="red",
+                     label="Mean Normalization", kde=True)
+        sns.set(rc={'figure.figsize': (7, 8)})
 
 
-############################################################################################################
-        st.subheader("Mean Normalization Distrubtion")
-        sns.displot(data, x="mean_norm_ratings", kde=True, fill=True)
-        sns.color_palette("Spectral", as_cmap=True)
-        st.pyplot()
 ###########################################################################################################
-
-
 main()
